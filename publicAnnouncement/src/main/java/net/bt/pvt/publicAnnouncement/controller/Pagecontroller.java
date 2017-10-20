@@ -14,28 +14,35 @@ public class Pagecontroller
 	public ModelAndView index()
 	{
 		ModelAndView mv=new ModelAndView("page");
-		mv.addObject("greeting","wellcome to spring framework");
+		mv.addObject("title","Home");
+		mv.addObject("userClickHome",true);
 		return mv;
 	}
-	@RequestMapping(value="/test")//request annotation
-//	public ModelAndView test(@RequestParam("greeting")String greeting)//parameter is mandatory
-	public ModelAndView test(@RequestParam(value="greeting",required=false)String greeting)
-	
+	@RequestMapping(value = {"/about"})
+	public ModelAndView about()
 	{
 		ModelAndView mv=new ModelAndView("page");
-		mv.addObject("greeting",greeting);
+		mv.addObject("title","About Us");
+		mv.addObject("userClickAbout",true);
 		return mv;
 	}
-	
-	@RequestMapping(value="/test/{greeting}")//path annotation
-//	public ModelAndView test(@RequestParam("greeting")String greeting)//parameter is mandatory
-	public ModelAndView testpath(@PathVariable("greeting")String greeting)
-	
+	@RequestMapping(value = {"/Vacancy"})
+	public ModelAndView Vacancy()
 	{
 		ModelAndView mv=new ModelAndView("page");
-		mv.addObject("greeting",greeting);
+		mv.addObject("title","Vacancy");
+		mv.addObject("userClickVacancy",true);
 		return mv;
 	}
+	@RequestMapping(value = {"/contact"})
+	public ModelAndView contact()
+	{
+		ModelAndView mv=new ModelAndView("page");
+		mv.addObject("title","Contact Us");
+		mv.addObject("userClickContact",true);
+		return mv;
+	}
+	
 	
 
 }
