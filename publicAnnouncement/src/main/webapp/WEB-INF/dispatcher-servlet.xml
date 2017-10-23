@@ -14,8 +14,9 @@
    
    ">
 
-	<context:component-scan base-package="net.bt.pvt.publicAnnouncement.controller"></context:component-scan>
-
+	<context:component-scan base-package="net.bt.pvt.publicAnnouncement.controller" />
+	<context:component-scan base-package="net.bhu.pvt" />
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="WEB-INF/view/pages/" />
